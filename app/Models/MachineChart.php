@@ -13,7 +13,13 @@ class MachineChart extends Model
         'machine_id',
         'chart_name',
         'chart_data',
+        'link'
     ];
+
+    protected $casts = [
+        'chart_data' => 'array'
+    ];
+    
     protected $hidden = [
         'created_at',
         'updated_at',

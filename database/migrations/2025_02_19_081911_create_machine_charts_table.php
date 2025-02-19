@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('machine_id');
             $table->string('chart_name');
+            $table->text('link');
             $table->json('chart_data');
             $table->timestamps();
         });

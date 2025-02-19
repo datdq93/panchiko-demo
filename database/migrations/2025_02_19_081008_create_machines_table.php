@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('panchiko_id');
             $table->string('name');
-            $table->string('title_filter_url');
+            $table->text('title_filter_url');
             $table->timestamps();
         });
     }
