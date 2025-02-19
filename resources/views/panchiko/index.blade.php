@@ -1,6 +1,16 @@
 @extends('layout.app')
 
 @section('content')
+<div class="row">
+    <form action="{{ route('get_data') }}" method="post">
+        @csrf
+        <label for="">Link: </label>
+        <input type="text" name="link">
+
+        <button class="btn btn-primary">Crawl data</button>
+
+    </form>
+</div>
     <div class="">
         <div class="page-title">
             <div class="row">

@@ -16,7 +16,7 @@ class CrawData extends Command
      *
      * @var string
      */
-    protected $signature = 'app:craw-data {panchiko_id}';
+    protected $signature = 'app:craw-data {panchiko_id} {type?}';
 
     /**
      * The console command description.
@@ -49,6 +49,10 @@ class CrawData extends Command
         $baseUrl = "https://min-repo.com/pachinko/";
 
         $url = $baseUrl . $panchikoId;
+        $type =  $this->argument('type');
+        if($type == 'link') {
+            $url = $this->argument('panchiko_id');
+        }
 
         // $output = shell_exec("node resources/js/scrape.js " . escapeshellarg($url));
 

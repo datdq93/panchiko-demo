@@ -33,7 +33,25 @@ class PanchikoController extends Controller
     }
     public function getData(Request $request)
     {
-        
-        // Artisan::call('')
+        set_time_limit(300);
+        $link = $request->link;
+        if(!$link)
+        {
+            return redirect()->back();
+        }
+
+        try {
+            Artisan::call('app:craw-data', [
+                'panchiko_id' => $link,
+                'type' => 'link'
+                ]);
+        } catch (\Throwable $th) {
+           dd($th);
+        }
+
+    
+        return redirect()->route('panchikos');
+
+
     }
 }

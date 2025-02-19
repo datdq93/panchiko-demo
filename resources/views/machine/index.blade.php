@@ -1,6 +1,9 @@
 @extends('layout.app')
 
 @section('content')
+<div class="row">
+    <h5><a href="{{ route('panchikos') }}">Home</a></h5>
+</div>
     <div class="">
         <div class="page-title">
             <div class="row">
