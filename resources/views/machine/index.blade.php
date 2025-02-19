@@ -29,7 +29,11 @@
                     @foreach ($machines as $key => $machine)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>
-                            <td><a href="{{ route('machine.chart', [
+                            <td><a 
+                            @if (count($machine->machineCharts) == 0)
+                                style ="color: red"
+                            @endif
+                            href="{{ route('machine.chart', [
                             'panchiko_id' => $panchiko->id,
                             'machine_id' => $machine->id 
                             ]) }}"  rel="noopener noreferrer">{{ $machine->name }}</a></td>
