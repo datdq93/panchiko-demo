@@ -12,27 +12,32 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Machine Name</th>
                         <th scope="col">Title Filter</th>
-                        <th scope="col">URL</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($machines as $key => $machine)
                         <tr>
                             <th scope="row">{{ $key + 1 }}</th>
-                            <td>{{ $machine->name }}</td>
-                            <td>{{ $machine->title_filter_url }}</td>
-                            <td> <a
-                                    href="{{ $panchiko->url . $machine->title_filter_url }}">{{ $panchiko->url . '?kishu=' . $machine->title_filter_url }}</a>
-                            </td>
+                            <td><a href="{{ route('machine.chart', [
+                            'panchiko_id' => $panchiko->id,
+                            'machine_id' => $machine->id 
+                            ]) }}"  rel="noopener noreferrer">{{ $machine->name }}</a></td>
+                            <td><a
+                                href="{{ $machine->title_filter_url }}">{{ \Str::limit( $machine->title_filter_url, 100, '...') }}</a></td>
+                            <td> 
+                           
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+    </div>
     @endsection

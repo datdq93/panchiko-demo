@@ -30,7 +30,7 @@
                         <td><a href="{{ route('machines', ['panchiko_id' => $panchiko->id]) }}">{{ $panchiko->name }}</a>
                         </td>
                         <td>{{ $panchiko->panchiko_url_id }}</td>
-                        <td> <a href="{{ $panchiko->url }}">{{ $panchiko->url }}</a></td>
+                        <td> <a target="_blank" href="{{ $panchiko->url }}">{{ $panchiko->url }}</a></td>
                     </tr>
                 @endforeach
             </tbody>
