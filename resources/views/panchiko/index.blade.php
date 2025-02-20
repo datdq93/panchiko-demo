@@ -12,14 +12,14 @@
             </form>
         </div>
         <div>
-            <h2 class="pb-3">Panchiko</h2>
+            <h2 class="pb-3">Pachinko</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead class="bg-primary">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Panchiko Name</th>
-                            <th scope="col">Panchiko ID</th>
+                            <th scope="col">Pachinko Name</th>
+                            <th scope="col">Pachinko ID</th>
                             <th scope="col">URL</th>
                         </tr>
                     </thead>
